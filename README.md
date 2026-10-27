@@ -26,6 +26,11 @@
 - Fetch data for trailer video and update store
 - Embeeded the youtube video and make it autoplay and mute
 - Tailwind css to make Main container look awesome
+- Build secondary component
+- Build Movie List and Movie Card
+- TMDB images CDN for poster
+- Madre the brwose page with tailwind
+- custom hook for popular and top rated apis
 
 
 # Features

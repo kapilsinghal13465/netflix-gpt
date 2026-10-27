@@ -9,7 +9,8 @@ const VideoBackground = ({ movieId }) => {
       const videoId = trailerVideo?.key || "OFaJzL83y0Q";
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className=" overflow-hidden">
+      <div className="w-full">
       <iframe
       className="w-full aspect-video block"
         src={`https://www.youtube.com/embed/OFaJzL83y0Q?si=${videoId}&autoplay=1&mute=1`}
@@ -17,6 +18,7 @@ const VideoBackground = ({ movieId }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
       ></iframe>
+      </div>
     </div>
   );
 };

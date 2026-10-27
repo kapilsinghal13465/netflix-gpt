@@ -7,12 +7,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { AppBackgroundUrl, HeaderLogo, UserUrl } from "../utils/constants"; 
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -54,14 +53,11 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: nameRef.current.value,
-            photoURL:
-              "https://occ-0-3647-3646.1.nflxso.net/dnm/api/v6/SO2HoVCx33X8phZh2pZZmQ4QgNY/AAAABf6Nh861wNxGfVfN-tmLT432oRrNfJL0WhX7kx22zbQVcA_0D2UCEr8hgENP_LZN2Y6vTrVN2goVV-vVMygWrztxhDzA-zhSfh2f.png?r=e6e",
+            photoURL: UserUrl,
           }).then(() => {
-            console.log(user);
              const { uid, email, displayName, photoURL } = auth.currentUser;
                     dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));
             // ...
-            navigate("/browse");
           });
         })
         .catch((error) => {
@@ -81,9 +77,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
           // ...
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -99,7 +93,7 @@ const Login = () => {
       <div className="absolute w-screen">
         <video
           className="w-screen"
-          src="https://occ-0-3646-3647.1.nflxso.net/so/soa1/728/1780063559357945089.mp4?v=1&e=1792877914&t=soyTMx7qGZWaGD90sYfvjkrLYLo"
+          src={AppBackgroundUrl}
         />
       </div>
       <form className="absolute bg-black w-4/12 my-36 mx-auto right-0 left-0 p-8 text-white bg-opacity-80">

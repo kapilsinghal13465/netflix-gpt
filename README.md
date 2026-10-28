@@ -22,7 +22,7 @@
 - Register TMDB api & create an app & get accessToken
 - Fetch from TMDB now playing Movies
 - creare and update movie slice data
-- Planning for main and secomdary container
+- Planning for main and secondary container
 - Fetch data for trailer video and update store
 - Embeeded the youtube video and make it autoplay and mute
 - Tailwind css to make Main container look awesome
@@ -31,7 +31,10 @@
 - TMDB images CDN for poster
 - Madre the brwose page with tailwind
 - custom hook for popular and top rated apis
-
+- GPT Search Feature
+- GPT Search Bar
+- (BONUS) Multi-language Feature in our app
+- Integrate GPT APIs
 
 # Features
 - Login/Sign Up page
